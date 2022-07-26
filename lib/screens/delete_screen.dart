@@ -60,36 +60,39 @@ class _DeleteScreenState extends State<DeleteScreen> {
       appBar: AppBar(
         title: Text('DELETE'),
       ),
-      body: Column(
-        children: [
-          Text(
-            'According to documentation of the Api delete post method is only valid for id 0 , and as we know to delete a post only id is required ',
-            style: TextStyle(
-              fontSize: 18,
+      body: Padding(
+        padding: const EdgeInsets.all(15.0),
+        child: Column(
+          children: [
+            Text(
+              'According to documentation of the Api delete post method is only valid for id 0 , and as we know to delete a post only id is required ',
+              style: TextStyle(
+                fontSize: 18,
+              ),
             ),
-          ),
-          SizedBox(
-              height: 50,
-              child: TextField(
-                controller: _idController,
-                decoration: InputDecoration(
-                    hintText: 'enter userId 0 for success status'),
-                inputFormatters: [
-                  FilteringTextInputFormatter.digitsOnly,
-                  LengthLimitingTextInputFormatter(1),
-                ],
-              )),
-          ElevatedButton(
-            onPressed: () {
-              showData();
-            },
-            child: Text('Delete'),
-          ),
-          SizedBox(
-            height: 100,
-          ),
-          Text('please wait for response ')
-        ],
+            SizedBox(
+                height: 50,
+                child: TextField(
+                  controller: _idController,
+                  decoration: InputDecoration(
+                      hintText: 'enter userId 0 for success status'),
+                  inputFormatters: [
+                    FilteringTextInputFormatter.digitsOnly,
+                    LengthLimitingTextInputFormatter(1),
+                  ],
+                )),
+            ElevatedButton(
+              onPressed: () {
+                showData();
+              },
+              child: Text('Delete'),
+            ),
+            SizedBox(
+              height: 100,
+            ),
+            Text('please wait for response ')
+          ],
+        ),
       ),
     );
   }

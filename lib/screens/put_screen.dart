@@ -58,50 +58,53 @@ class _CreateScreenState extends State<PutScreen> {
         appBar: AppBar(
           title: Text('UPDATE'),
         ),
-        body: Column(
-          children: [
-            SizedBox(
-              height: 50,
-              child: Text(
-                  "According to Api's documentation this method is only valid for index 1 and others also"),
-            ),
-            SizedBox(
-              height: 50,
-              child: TextField(
-                controller: _idController,
-                decoration:
-                    InputDecoration(hintText: 'enter id 1 for success status'),
+        body: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 50,
+                child: Text(
+                    "According to Api's documentation this method is only valid for index 1 and others also"),
               ),
-            ),
-            SizedBox(
-              height: 50,
-              child: TextField(
-                controller: _titleController,
-                decoration: InputDecoration(hintText: 'enter title'),
-              ),
-            ),
-            SizedBox(
-              height: 50,
-              child: TextField(
-                controller: _bodyController,
-                decoration: InputDecoration(
-                  hintText: 'enter body',
+              SizedBox(
+                height: 50,
+                child: TextField(
+                  controller: _idController,
+                  decoration:
+                      InputDecoration(hintText: 'enter id 1 for success status'),
                 ),
               ),
-            ),
-            ElevatedButton(
-                onPressed: () {
-                  // services.putData(titleController.text, bodyController.text, idController.text
-                  //    );
-                  showData();
-                },
-                child: Text('Update')),
-                SizedBox(
-                  height: 100,
+              SizedBox(
+                height: 50,
+                child: TextField(
+                  controller: _titleController,
+                  decoration: InputDecoration(hintText: 'enter title'),
                 ),
-                Text("Please wait a moment")
+              ),
+              SizedBox(
+                height: 50,
+                child: TextField(
+                  controller: _bodyController,
+                  decoration: InputDecoration(
+                    hintText: 'enter body',
+                  ),
+                ),
+              ),
+              ElevatedButton(
+                  onPressed: () {
+                    // services.putData(titleController.text, bodyController.text, idController.text
+                    //    );
+                    showData();
+                  },
+                  child: Text('Update')),
+                  SizedBox(
+                    height: 100,
+                  ),
+                  Text("Please wait a moment")
 
-          ],
+            ],
+          ),
         ));
   }
 }

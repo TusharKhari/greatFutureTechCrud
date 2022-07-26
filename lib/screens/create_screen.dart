@@ -50,38 +50,44 @@ class _CreateScreenState extends State<CreateScreen> {
         appBar: AppBar(
           title: Text('CREATE'),
         ),
-        body: Column(
-          children: [
-            SizedBox(
-              height: 50,
-              child: TextField(
-                controller: _userIdController,
-                decoration: InputDecoration(hintText: 'enter userId 0 or 1'),
-                inputFormatters: [
-                                FilteringTextInputFormatter.digitsOnly,
-                                LengthLimitingTextInputFormatter(1),
-                              ],
+        body: Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 50,
+                child: TextField(
+                  controller: _userIdController,
+                  decoration: InputDecoration(hintText: 'enter userId 0 or 1'),
+                  inputFormatters: [
+                                  FilteringTextInputFormatter.digitsOnly,
+                                  LengthLimitingTextInputFormatter(1),
+                                ],
+                ),
               ),
-            ),
-            SizedBox(
-              height: 50,
-              child: TextField(
-                controller: _titleController,
-                decoration: InputDecoration(hintText: 'enter title'),
+              SizedBox(
+                height: 50,
+                child: TextField(
+                  controller: _titleController,
+                  decoration: InputDecoration(hintText: 'enter title'),
+                ),
               ),
-            ),
-            SizedBox(
-              height: 50,
-              child: TextField(
-                controller: _bodyController,
-                decoration: InputDecoration(hintText: 'enter body', ),
-                 
+              SizedBox(
+                height: 50,
+                child: TextField(
+                  controller: _bodyController,
+                  decoration: InputDecoration(hintText: 'enter body', ),
+                   
+                ),
               ),
-            ),
-            ElevatedButton(
-                onPressed: showData,
-                child: Text('Create'))
-          ],
+              ElevatedButton(
+                  onPressed: showData,
+                  child: Text('Create')),
+                  SizedBox(height: 100,)
+                  ,
+                  Text("Please wait"),
+            ],
+          ),
         ));
   }
 }
